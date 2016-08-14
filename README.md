@@ -10,7 +10,7 @@ There are three known reasons an exception might be raised:
 The Adestra MessageFocus API uses standard XML-RPC data structures, as such any reference in the documentation to a `Struct` refers to the `dict` type in python, and a `StructArray` simply refers to a list of dictionaries. For ease of use dates have been set to unmarshal as `datetime.datetime` rather than `xmlrpclib.DateTime` More information is availble on [this page](https://docs.python.org/2/library/xmlrpclib.html#xmlrpclib.ServerProxy).
 
 ## Usage
-All apis are accessible exactly as described in the API documentation once a `Client` instance has been created.
+All API methods are accessible exactly as described in the API documentation once a `Client` instance has been created.
 The following code makes a call to the [event search]() method of the API. Any exceptions caught by `except Fault as f` can be looked up [here](https://app.adestra.com/doc/page/current/index/api/error-handling)
 ```python
 from pymessagefocus2 import Client, Fault
