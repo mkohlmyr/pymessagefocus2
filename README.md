@@ -3,7 +3,7 @@ This API client is intended to conform entirely to the [API documentation](https
 
 There are three known reasons an exception might be raised:
  1. Adestra MessageFocus returned an error in the form of `xmlrpclib.Fault` (standard) or in the case of failed authentication `xmlrpclib.ProtocolError`. These are standardised under `pymessagefocus2.Fault` with the interface specified in the [error documentation](https://app.adestra.com/doc/page/current/index/api/event).
- 2. Networking failure: `socket.error` or httplib.BadStatusLine will be raised if a retry fails inside of `xmlrpclib` ([source](https://hg.python.org/cpython/file/651f7addf4a8/Lib/xmlrpclib.py#l1284)).
+ 2. Networking failure: `socket.error` or `httplib.BadStatusLine` will be raised if a retry fails inside of `xmlrpclib` ([source](https://hg.python.org/cpython/file/651f7addf4a8/Lib/xmlrpclib.py#l1284)).
  3. XML marshalling errors in the form of a `TypeError` ([source](https://hg.python.org/cpython/file/651f7addf4a8/Lib/xmlrpclib.py#l652)) may be raised by `xmlrpclib` if the values passed are not of a [conformable type](https://docs.python.org/2/library/xmlrpclib.html#xmlrpclib.ServerProxy)
 
 ## Marshalling
