@@ -17,7 +17,9 @@ from pymessagefocus2 import Client, Fault
 
 c = Client("organisation", "username", "password")
 try:
-    c.event.search({"type": "click"})
+    res = c.event.search({"type": "click"})
+    for r in res:
+        print c.contact.get(r.get("id")).get("email"), r.get("timestamp")
 except Fault as f:
     print f.faultCode
     print f.faultString
